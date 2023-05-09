@@ -1,30 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from './router'
+import router from './router/index.js'
 import store from './store'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 
 Vue.config.productionTip = false
 
-Vue.use(Antd)
 
-Vue.component('base-checkbox', {
-  model: {
-    prop: 'checked',
-    event: 'change'
-  },
-  props: {
-    checked: Boolean
-  },
-  template: `
-    <input
-      type="checkbox"
-      v-bind:checked="checked"
-      v-on:change="$emit('change', $event.target.checked)"
-    >
-  `
-})
+Vue.use(Antd)
+Vue.use(ElementUI);
+
 
 new Vue({
   router,
